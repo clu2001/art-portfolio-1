@@ -11,12 +11,14 @@ const pages = ['Original Characters'];
 const Navbar = () => {
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{
+        boxShadow: 0, 
+        background: '#2E3B55'
+      }}>
       <Container maxWidth="l">
         <Toolbar sx={{
             display: "flex",
             flexDirection: "row",
-            backgroundColor: "blue",
             justifyContent: "space-between"
           }}>
           <Typography

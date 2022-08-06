@@ -1,8 +1,10 @@
 import Navbar from "./Components/Navbar"; 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Background from "./Images/Background.PNG"; 
 import './App.css';
 
 function App() {
+
   
   const THEME = createMuiTheme({
     typography: {
@@ -18,6 +20,13 @@ function App() {
     <MuiThemeProvider theme={THEME}>
       <div className="App">
         <Navbar></Navbar>
+        <div style={{ 
+          backgroundImage: `url(${Background})`,
+          width:500,
+          height:500
+        }}>
+          Hello World
+        </div>
       </div>
   </MuiThemeProvider>
   );
