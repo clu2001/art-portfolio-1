@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import Navbar from "./Components/Navbar"; 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import './App.css';
 
 function App() {
+  
+  const THEME = createMuiTheme({
+    typography: {
+     "fontFamily": `"IBM Plex Mono"`,
+     "fontSize": 14,
+     "fontWeightLight": 300,
+     "fontWeightRegular": 400,
+     "fontWeightMedium": 500
+    }
+ });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={THEME}>
+      <div className="App">
+        <Navbar></Navbar>
+      </div>
+  </MuiThemeProvider>
   );
 }
 
