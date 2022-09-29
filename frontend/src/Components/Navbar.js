@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
+import { Link } from 'react-router-dom';
+
 const pages = ['Original Characters'];
 
 const Navbar = () => {
@@ -40,12 +42,14 @@ const Navbar = () => {
           </Typography>
           <Box >
             {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+              <Link to="/characters">
+                <Button
+                  key={page}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
