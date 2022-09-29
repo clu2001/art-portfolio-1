@@ -22,7 +22,7 @@ const Navbar = () => {
             flexDirection: "row",
             justifyContent: "space-between"
           }}>
-          <Link to="/">
+          <Link to="/" >
             <Typography
               variant="h6"
               noWrap
