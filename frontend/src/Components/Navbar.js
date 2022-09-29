@@ -23,11 +23,11 @@ const Navbar = () => {
             flexDirection: "row",
             justifyContent: "space-between"
           }}>
+            <Link to="/">
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -40,6 +40,7 @@ const Navbar = () => {
           >
             Quckidon
           </Typography>
+          </Link>
           <Box >
             {pages.map((page) => (
               <Link to="/characters">
