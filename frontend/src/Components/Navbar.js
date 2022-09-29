@@ -8,14 +8,13 @@ import Button from '@mui/material/Button';
 
 import { Link } from 'react-router-dom';
 
-const pages = ['Original Characters'];
+const pages = ['Original Characters', 'Gallery'];
 
 const Navbar = () => {
 
   return (
     <AppBar position="sticky" sx={{
-        boxShadow: 0, 
-        background: '#2E3B55'
+        background: '#8C92AC'
       }}>
       <Container maxWidth="l">
         <Toolbar sx={{
@@ -23,25 +22,26 @@ const Navbar = () => {
             flexDirection: "row",
             justifyContent: "space-between"
           }}>
-            <Link to="/">
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.1rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
+          <Link to="/">
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.1rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            >
             Quckidon
-          </Typography>
+            </Typography>
           </Link>
-          <Box >
+          <Box sx={{
+              display: "flex",
+              flexDirection: "row"}}>
             {pages.map((page) => (
               <Link to="/characters">
                 <Button
