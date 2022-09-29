@@ -8,7 +8,8 @@ import Button from '@mui/material/Button';
 
 import { Link } from 'react-router-dom';
 
-const pages = ['Original Characters', 'Gallery'];
+const pages = ['Original Characters', 'Gallery', 'Contact'];
+const pageLinks = ['/characters', '/gallery', '/contact']
 
 const Navbar = () => {
 
@@ -32,7 +33,7 @@ const Navbar = () => {
                 fontFamily: 'monospace',
                 fontWeight: 700,
                 letterSpacing: '.1rem',
-                color: 'inherit',
+                color: '#FFFFFF',
                 textDecoration: 'none',
               }}
             >
@@ -42,16 +43,30 @@ const Navbar = () => {
           <Box sx={{
               display: "flex",
               flexDirection: "row"}}>
-            {pages.map((page) => (
-              <Link to="/characters">
+              <Link to={pageLinks[0]}>
                 <Button
-                  key={page}
+                  key={pages[0]}
                   sx={{ my: 2, color: 'white', display: 'block' }}
                 >
-                  {page}
+                  {pages[0]}
                 </Button>
               </Link>
-            ))}
+              <Link to={pageLinks[1]}>
+                <Button
+                  key={pages[1]}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {pages[1]}
+                </Button>
+              </Link>
+              <Link to={pageLinks[2]}>
+                <Button
+                  key={pages[2]}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                >
+                  {pages[2]}
+                </Button>
+              </Link>
           </Box>
         </Toolbar>
       </Container>

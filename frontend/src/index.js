@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Characters from "./Pages/Characters"
+import Contact from "./Pages/Contact"
+import Gallery from "./Pages/Gallery"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Navbar from "./Components/Navbar"; 
@@ -15,6 +17,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="/characters" element={<Characters/>}></Route>
+        <Route path="/gallery" element={<Gallery/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
