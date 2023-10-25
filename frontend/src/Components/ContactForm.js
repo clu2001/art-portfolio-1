@@ -1,7 +1,43 @@
 import React, { useState } from "react" 
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { Box, TextField, Button, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+    formContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      borderRadius: '10px',
+    },
+    textField: {
+      marginBottom: '15px',
+      marginTop: '15px', 
+      '& .MuiOutlinedInput-root': {
+        '&:hover fieldset': {
+          borderColor: '#3f51b5',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: '#3f51b5',
+        },
+      },
+    },
+    submitButton: {
+      marginTop: '10px',
+      backgroundColor: '#3f51b5',
+      color: '#fff',
+      '&:hover': {
+        backgroundColor: '#303f9f',
+      },
+      transition: 'background-color 0.3s',
+    },
+    title: {
+      marginBottom: '20px',
+      textAlign: 'center',
+      fontWeight: 'bold',
+    }
+  }));
 
 const initialFormValues = {
   name: "",
@@ -15,6 +51,8 @@ const check = {
 }
 
 const ContactForm = () => {
+
+    const classes = useStyles();
 
     const [status, setStatus] = useState("Submit")
     const [values, setValues] = useState(initialFormValues);
@@ -63,36 +101,48 @@ const ContactForm = () => {
     }
 
     return (
-        <Box
-            component="form"
-            sx={{
-            '& > :not(style)': { m: 1, width: '25ch' },
-            }}
-            noValidate
-            autoComplete="off"
-        >
-            <TextField 
-              required
-              name="email" 
-              onChange={(event) => validateData(event.target.value)} 
-              id="outlined-basic" 
-              label="Email" 
-              variant="outlined" />
-            <TextField onChange={(event) => validateData(event.target.value)} id="outlined-basic" label="Name" variant="outlined" />
-            <TextField
-              required
-              onChange={(event) => validateData(event.target.value)}
-              id="outlined-multiline-static"
-              label="Message"
-              multiline
-              rows={10}
-            />
-            <Button 
-              onClick={() => handleSubmit()}
-              type="submit"
-              variant="outlined" >{status}</Button>
-      </Box>
-    );
+        <Box className={classes.formContainer}>
+          <Typography variant="h4" className={classes.title}>
+            Contact me!
+          </Typography>
+          <TextField
+            required
+            className={classes.textField}
+            name="email"
+            onChange={(event) => validateData(event.target.value)}
+            id="outlined-basic"
+            label="Email"
+            variant="outlined"
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            className={classes.textField}
+            onChange={(event) => validateData(event.target.value)}
+            id="outlined-basic"
+            label="Name"
+            variant="outlined"
+            sx={{ mb: 2 }}
+          />
+          <TextField
+            required
+            className={classes.textField}
+            onChange={(event) => validateData(event.target.value)}
+            id="outlined-multiline-static"
+            label="Message"
+            multiline
+            rows={4}
+            sx={{ mb: 2 }}
+          />
+          <Button
+            className={classes.submitButton}
+            onClick={() => handleSubmit()}
+            type="submit"
+            variant="contained"
+          >
+            {status}
+          </Button>
+        </Box>
+      );
 }
 
 export default ContactForm
