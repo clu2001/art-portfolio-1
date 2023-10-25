@@ -12,31 +12,40 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '10px',
     },
     textField: {
-      marginBottom: '15px',
-      marginTop: '15px', 
-      '& .MuiOutlinedInput-root': {
-        '&:hover fieldset': {
-          borderColor: '#3f51b5',
+        marginBottom: '15px',
+        marginTop: '15px', 
+        '& .MuiOutlinedInput-root': {
+          color: '#fff', // Text color
+          '& fieldset': {
+            borderColor: '#fff', // Border color
+          },
+          '& label': {
+            color: '#fff', // Label color
+          },
+          '&:hover fieldset': {
+            borderColor: '#3f51b5',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: '#3f51b5',
+          },
         },
-        '&.Mui-focused fieldset': {
-          borderColor: '#3f51b5',
-        },
-      },
     },
     submitButton: {
-      marginTop: '10px',
-      backgroundColor: '#3f51b5',
-      color: '#fff',
-      '&:hover': {
-        backgroundColor: '#303f9f',
-      },
-      transition: 'background-color 0.3s',
+        marginTop: '10px',
+        backgroundColor: '#3f51b5',
+        color: '#fff',
+        borderColor: '#fff', // Border color
+        '&:hover': {
+          backgroundColor: '#303f9f',
+        },
+        transition: 'background-color 0.3s',
     },
     title: {
       marginBottom: '20px',
       textAlign: 'center',
       fontWeight: 'bold',
-    }
+    }, 
+    
   }));
 
 const initialFormValues = {

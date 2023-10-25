@@ -1,4 +1,6 @@
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import './App.css'; 
+
 
 const App = () => {
   

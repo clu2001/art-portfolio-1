@@ -8,14 +8,14 @@ import Button from '@mui/material/Button';
 
 import { Link } from 'react-router-dom';
 
-const pages = ['Original Characters', 'Gallery', 'Contact'];
+const pages = ['Gallery 1', 'Gallery 2', 'Contact'];
 const pageLinks = ['/characters', '/gallery', '/contact']
 
 const Navbar = () => {
 
   return (
     <AppBar position="sticky" sx={{
-        background: '#8C92AC'
+        background: 'black'
       }}>
       <Container maxWidth="l">
         <Toolbar sx={{
@@ -37,7 +37,7 @@ const Navbar = () => {
                 textDecoration: 'none',
               }}
             >
-            Quckidon
+            Art Portfolio
             </Typography>
           </Link>
           <Box sx={{
